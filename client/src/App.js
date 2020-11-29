@@ -1,14 +1,16 @@
 import "./styles/App.css";
-import { ApolloClient, ApolloProvider } from "@apollo/client";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import Books from "./components/Books";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
+  cache: new InMemoryCache(),
 });
 
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <h1>Hello world</h1>
+      <Books />
     </ApolloProvider>
   );
 };
