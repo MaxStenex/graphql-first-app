@@ -1,0 +1,14 @@
+{
+  "name": "graphql-first-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MaxStenex/graphql-first-app.git",
+  "author": "Maxim Rozinkevich <yourstenex@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn start\""
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
