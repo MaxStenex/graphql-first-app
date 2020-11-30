@@ -1,18 +1,8 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import React from "react";
 import "../styles/Books.css";
-
-const GET_BOOKS = gql`
-  {
-    books {
-      name
-      id
-      author {
-        name
-      }
-    }
-  }
-`;
+import { GET_BOOKS } from "../graphql/queries";
+import AddAuthor from "./AddAuthor.jsx";
 
 const Books = () => {
   const { data, loading } = useQuery(GET_BOOKS);
@@ -32,6 +22,7 @@ const Books = () => {
           ))}
         </ul>
       )}
+      <AddAuthor />
     </section>
   );
 };
